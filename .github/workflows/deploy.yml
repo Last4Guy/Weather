@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ['main'] # Если ваша основная ветка называется master, измените на master
+    branches: ['main'] 
   workflow_dispatch:
 
 permissions:
@@ -31,14 +31,15 @@ jobs:
 
       - name: Build
         run: npm run build
-
+        env:
+          VITE_WEATHER_API_KEY: ${{ secrets.VITE_WEATHER_API_KEY }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # По умолчанию Vite собирает в папку dist
+          path: './dist' 
 
       - name: Deploy to GitHub Pages
         id: deployment

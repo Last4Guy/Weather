@@ -36,19 +36,20 @@ function fetchApi(query) {
     const lang = 'RU'
 
     const url = 'https://' + baseUrl + '/' + apiVer + '/' + apiType + '?key=' + apiKey + '&q=' + query + '&days=' + daysCount + '&hour=' + hour + '&lang=' + lang
+    cityTitleElement.textContent = apiKey
 
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        return new Promise(resolve => {
-            setTimeout(() => {
-                resolve(data);
-            }, 2000);
-        });
-    })
-    .then(data => renderUI(data))
-    .catch(error => console.error(error.message))
-}
+//     fetch(url)
+//     .then(response => response.json())
+//     .then(data => {
+//         return new Promise(resolve => {
+//             setTimeout(() => {
+//                 resolve(data);
+//             }, 2000);
+//         });
+//     })
+//     .then(data => renderUI(data))
+//     .catch(error => console.error(error.message))
+// }
 function renderUI(data) {
     cityTitleElement.textContent = data.location.name
     headerWeaterImg.src = data.current.condition.icon
