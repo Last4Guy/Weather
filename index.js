@@ -11,7 +11,7 @@ const weaterBlocke = document.getElementById('weaterBlocke')
 const cityInput = document.getElementById('cityInput')
 document.addEventListener('submit', function(event){
     event.preventDefault()
-    // showLoading()
+    showLoading()
     submitTapped()
 })
 
@@ -37,12 +37,10 @@ function fetchApi(query) {
 
     const url = 'https://' + baseUrl + '/' + apiVer + '/' + apiType + '?key=' + apiKey + '&q=' + query + '&days=' + daysCount + '&hour=' + hour + '&lang=' + lang
 
-
     fetch(url)
     .then(response => response.json())
     .then(data => {
         return new Promise(resolve => {
-            cityTitleElement.textContent = data
             setTimeout(() => {
                 resolve(data);
             }, 2000);
@@ -50,7 +48,6 @@ function fetchApi(query) {
     })
     .then(data => renderUI(data))
     .catch(error => console.error(error.message))
-    
 }
 function renderUI(data) {
     cityTitleElement.textContent = data.location.name
@@ -96,3 +93,4 @@ function renderUI(data) {
     tableWeater.appendChild(imgWeater)
     tableWeater.appendChild(tempWeater)
 }
+
