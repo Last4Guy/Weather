@@ -11,7 +11,7 @@ const weaterBlocke = document.getElementById('weaterBlocke')
 const cityInput = document.getElementById('cityInput')
 document.addEventListener('submit', function(event){
     event.preventDefault()
-    showLoading()
+    // showLoading()
     submitTapped()
 })
 
