@@ -39,13 +39,6 @@ function fetchApi(query) {
 
     fetch(url)
     .then(response => response.json())
-    .then(data => {
-        return new Promise(resolve => {
-            setTimeout(() => {
-                resolve(data);
-            }, 2000);
-        });
-    })
     .then(data => renderUI(data))
     .catch(error => console.error(error.message))
 }
