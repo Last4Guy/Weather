@@ -49,7 +49,7 @@ function fetchApi(query) {
 //     })
 //     .then(data => renderUI(data))
 //     .catch(error => console.error(error.message))
-// }
+}
 function renderUI(data) {
     cityTitleElement.textContent = data.location.name
     headerWeaterImg.src = data.current.condition.icon
@@ -94,4 +94,3 @@ function renderUI(data) {
     tableWeater.appendChild(imgWeater)
     tableWeater.appendChild(tempWeater)
 }
-
