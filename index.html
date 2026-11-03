@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <input type="text" id="cityInput" placeholder="Введите название города.">
+        <button type="submit" id="cityBtn">Найти</button>
+    </form>
+    <div id="weaterBlocke" class="weater_blocke"></div>
+        <div class="weater_block_hidden" id="weaterBlock">
+            <h1 id="cityTitle">123</h1>
+            <div style="display: flex;">
+                <div style="display: flex;">
+                    <img id="headerWeaterImg">
+                    <div style="font-size: 48px;" id="headerTempC"></div>
+                    <div style="font-size: 25px;">°С</div>
+                </div>
+                <div style="display: flex; flex-direction: column;margin-left: 10px;">
+                    <p>Ощущается как: <span id="headerFeelsLike"></span></p>
+                    <p>Влажность: <span id="headerHumidity"></span></p>
+                    <p>Ветер: <span id="headerWind"></span></p>
+                </div>
+            </div>
+            <table>
+                <tbody id="tableWeater">
+                </tbody>
+            </table>
+        </div>
+      <script type="module" src="index.js"></script>
+
+</body>
+</html>
