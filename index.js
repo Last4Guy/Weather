@@ -11,11 +11,11 @@ const weaterBlocke = document.getElementById('weaterBlocke')
 const cityInput = document.getElementById('cityInput')
 document.addEventListener('submit', function(event){
     event.preventDefault()
-    awaitTaped()
+    showLoading()
     submitTapped()
 })
 
-function awaitTaped() {
+function showLoading() {
     const awaitBlock = document.createElement('div')
     awaitBlock.textContent = 'Ожидайте загрузки'
     weaterBlocke.appendChild(awaitBlock)
@@ -30,7 +30,7 @@ function fetchApi(query) {
     const baseUrl = 'api.weatherapi.com'
     const apiVer = 'v1'
     const apiType = 'forecast.json'
-    const apiKey = import.meta.env.OPEN_WEATHER_KEY
+    const apiKey = import.meta.env.VITE_WEATHER_API_KEY
     const daysCount = 7
     const hour = 17
     const lang = 'RU'
